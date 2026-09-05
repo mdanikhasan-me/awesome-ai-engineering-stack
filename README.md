@@ -12,7 +12,7 @@
   <a href="#contents"><img src="https://img.shields.io/badge/core-120%20projects-0969da?style=flat-square" alt="120 core projects"></a>
   <a href="#contents"><img src="https://img.shields.io/badge/stack-16%20areas-8250df?style=flat-square" alt="16 stack areas"></a>
   <img src="https://img.shields.io/badge/reviewed-Sep%205%202026-1f883d?style=flat-square" alt="Reviewed September 5 2026">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/list%20license-CC0--1.0-6e7781?style=flat-square" alt="CC0 1.0 list license"></a>
+  <a href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="https://img.shields.io/badge/list%20license-CC0--1.0-6e7781?style=flat-square" alt="CC0 1.0 list license"></a>
   <img src="https://img.shields.io/github/last-commit/mdanikhasan-me/awesome-ai-engineering-stack?style=flat-square&label=last%20commit" alt="Last commit">
 </p>
 
@@ -20,9 +20,7 @@
 
 **Awesome AI Engineering Stack** covers AI agents, RAG and vector databases, Model Context Protocol (MCP), LLM evaluation, LLMOps, model training and post-training, inference and model serving, AI gateways, observability, safety, dataset engineering and document AI.
 
-**Curated, not exhaustive.** Projects are selected for engineering utility, maintenance, licensing, adoption or stewardship, and distinct value within the stack. Narrower ecosystems, specialized infrastructure and lower-confidence projects live in companion indexes instead of inflating the core list.
-
-[Curation](CURATION.md) · [Notable exclusions](EXCLUSIONS.md) · [Watchlist](WATCHLIST.md) · [Contributing](CONTRIBUTING.md)
+**Curated, not exhaustive.** Projects are selected for engineering utility, maintenance, licensing, adoption or stewardship, and distinct value within the stack. The goal is signal over volume: a project stays only when it earns its place.
 
 ## Contents
 
@@ -70,7 +68,7 @@ flowchart LR
 
 ## Model Context Protocol (MCP)
 
-*Canonical protocol resources and the production-grade SDK/debugging surface. The wider SDK and integration ecosystem lives in a separate index.*
+*Canonical protocol resources and the production-grade SDK and debugging surface.*
 
 - [Model Context Protocol](https://github.com/modelcontextprotocol/modelcontextprotocol) - Official MCP specification and documentation; the canonical source for protocol behavior and versioning.
 - [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Official TypeScript SDK for building MCP clients and servers.
@@ -148,7 +146,7 @@ flowchart LR
 
 ## Document AI, OCR and Parsing
 
-*High-signal tools for turning real documents into structured, searchable data. Lower-level primitives live in the specialist index.*
+*High-signal tools for turning real documents into structured, searchable data.*
 
 - [Docling](https://github.com/docling-project/docling) - Local document conversion and structured extraction for RAG and data pipelines.
 - [Unstructured](https://github.com/Unstructured-IO/unstructured) - General document preprocessing and partitioning toolkit.
@@ -268,15 +266,18 @@ flowchart LR
 - [OpenLIT](https://github.com/openlit/openlit) - OpenTelemetry-native observability and evaluation stack for AI applications.
 - [Evidently](https://github.com/evidentlyai/evidently) - Evaluation and monitoring for ML, LLM and data-quality workflows.
 
-## Related indexes
+---
 
-The core list stays deliberately selective. Broader or more specialized projects are tracked separately.
-
-- [MCP Ecosystem](MCP_ECOSYSTEM.md) - Additional official SDKs plus domain-specific MCP servers and integrations.
-- [Document AI](DOCUMENT_AI.md) - Lower-level PDF, OCR, table-extraction and document-evaluation tooling.
-- [AI Data Infrastructure](DATA_INFRASTRUCTURE.md) - Broader analytical engines, lakehouse formats and data foundations that are useful around AI workloads but too generic for the core list.
-- [Watchlist](WATCHLIST.md) - Promising, young, adjacent or currently lower-confidence projects being tracked outside the core.
-- [Notable exclusions](EXCLUSIONS.md) - Selected well-known projects intentionally left out, with the reason.
 <p align="center">
-  <sub>This awesome list repo Built and maintained by <strong>MD Anik Hasan (Sawlper)</strong>.<br />If you want to reach me, <a href="https://mdanikhasan.com">mdanikhasan.com</a> has every way.</sub>
+  <sub>
+    Curated and maintained by <strong>MD Anik Hasan (Sawlper)</strong> ·
+    <a href="https://mdanikhasan.com">mdanikhasan.com</a>
+  </sub>
+</p>
+
+<p align="center">
+  <sub>
+    List content released under
+    <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>.
+  </sub>
 </p>
