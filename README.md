@@ -1,35 +1,76 @@
 # Awesome AI Engineering Stack [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-![Reviewed](https://img.shields.io/badge/reviewed-September%205%2C%202026-informational)
+<p align="center">
+  <strong>Production-focused open-source infrastructure for modern AI engineering.</strong>
+</p>
 
-> Open-source infrastructure and developer tooling for building, evaluating, deploying and operating modern AI systems.
+<p align="center">
+  Agents · RAG · MCP · LLMOps · Training · Fine-Tuning · Evaluation · Inference · Serving · Safety · Observability
+</p>
 
-A selective list spanning agents, retrieval, data, training, serving, evaluation, safety and production operations. Core entries are chosen for relevance, maintenance, licensing, adoption or stewardship, and distinct engineering utility; narrower ecosystems and lower-confidence projects live in companion indexes.
+<p align="center">
+  <a href="#contents"><img src="https://img.shields.io/badge/core-120%20projects-0969da?style=flat-square" alt="120 core projects"></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/stack-16%20areas-8250df?style=flat-square" alt="16 stack areas"></a>
+  <img src="https://img.shields.io/badge/reviewed-Sep%205%202026-1f883d?style=flat-square" alt="Reviewed September 5 2026">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/list%20license-CC0--1.0-6e7781?style=flat-square" alt="CC0 1.0 list license"></a>
+  <img src="https://img.shields.io/github/last-commit/mdanikhasan-me/awesome-ai-engineering-stack?style=flat-square&label=last%20commit" alt="Last commit">
+</p>
 
-See [Curation](CURATION.md) for the evidence standard and [Notable exclusions](EXCLUSIONS.md) for deliberate omissions.
+> A selective index of open-source tools for **building, evaluating, deploying and operating production AI systems**.
+
+**Awesome AI Engineering Stack** covers AI agents, RAG and vector databases, Model Context Protocol (MCP), LLM evaluation, LLMOps, model training and post-training, inference and model serving, AI gateways, observability, safety, dataset engineering and document AI.
+
+**Curated, not exhaustive.** Projects are selected for engineering utility, maintenance, licensing, adoption or stewardship, and distinct value within the stack. Narrower ecosystems, specialized infrastructure and lower-confidence projects live in companion indexes instead of inflating the core list.
+
+[Curation](CURATION.md) · [Notable exclusions](EXCLUSIONS.md) · [Watchlist](WATCHLIST.md) · [Contributing](CONTRIBUTING.md)
 
 ## Contents
 
-- [Model Context Protocol](#model-context-protocol)
-- [Agents and Orchestration](#agents-and-orchestration)
-- [Coding Agents](#coding-agents)
+- [Model Context Protocol (MCP)](#model-context-protocol-mcp)
+- [AI Agents and Orchestration](#ai-agents-and-orchestration)
+- [AI Coding Agents](#ai-coding-agents)
 - [Agent Memory](#agent-memory)
-- [Browser and Computer Use](#browser-and-computer-use)
-- [Structured Outputs and Constrained Generation](#structured-outputs-and-constrained-generation)
-- [Retrieval, Vector Search and Knowledge](#retrieval-vector-search-and-knowledge)
-- [Document Ingestion, OCR and Parsing](#document-ingestion-ocr-and-parsing)
-- [Data and Dataset Engineering](#data-and-dataset-engineering)
-- [Experiment Tracking and ML Lifecycle](#experiment-tracking-and-ml-lifecycle)
-- [Training, Post-Training and Distributed Compute](#training-post-training-and-distributed-compute)
-- [Inference and Serving](#inference-and-serving)
-- [Gateways and Model Routing](#gateways-and-model-routing)
-- [Evaluation and Benchmarks](#evaluation-and-benchmarks)
-- [Safety, Red Teaming and Governance](#safety-red-teaming-and-governance)
-- [Observability and Tracing](#observability-and-tracing)
+- [Browser and Computer-Use Agents](#browser-and-computer-use-agents)
+- [Structured LLM Outputs and Constrained Generation](#structured-llm-outputs-and-constrained-generation)
+- [RAG, Retrieval and Vector Databases](#rag-retrieval-and-vector-databases)
+- [Document AI, OCR and Parsing](#document-ai-ocr-and-parsing)
+- [AI Data and Dataset Engineering](#ai-data-and-dataset-engineering)
+- [ML Lifecycle and Experiment Tracking](#ml-lifecycle-and-experiment-tracking)
+- [Model Training, Fine-Tuning and Post-Training](#model-training-fine-tuning-and-post-training)
+- [LLM Inference and Model Serving](#llm-inference-and-model-serving)
+- [AI Gateways and Model Routing](#ai-gateways-and-model-routing)
+- [LLM Evaluation and Benchmarks](#llm-evaluation-and-benchmarks)
+- [AI Safety, Red Teaming and Guardrails](#ai-safety-red-teaming-and-guardrails)
+- [LLMOps, Observability and Tracing](#llmops-observability-and-tracing)
 
-## Model Context Protocol
+### Find the right layer
 
-*Canonical protocol resources and the production-grade SDK/debugging surface; the wider SDK and integration ecosystem is split out.*
+| I want to... | Start here |
+| --- | --- |
+| Build tool-using or multi-agent systems | [AI Agents](#ai-agents-and-orchestration) · [Agent Memory](#agent-memory) · [MCP](#model-context-protocol-mcp) |
+| Build RAG or knowledge systems | [RAG & Vector Databases](#rag-retrieval-and-vector-databases) · [Document AI](#document-ai-ocr-and-parsing) |
+| Build coding or browser agents | [AI Coding Agents](#ai-coding-agents) · [Browser Agents](#browser-and-computer-use-agents) |
+| Prepare datasets or fine-tune models | [Data Engineering](#ai-data-and-dataset-engineering) · [Model Training](#model-training-fine-tuning-and-post-training) |
+| Deploy models into production | [Inference & Serving](#llm-inference-and-model-serving) · [AI Gateways](#ai-gateways-and-model-routing) |
+| Test model or agent quality | [Evaluation](#llm-evaluation-and-benchmarks) · [Safety](#ai-safety-red-teaming-and-guardrails) |
+| Trace and monitor production AI | [LLMOps & Observability](#llmops-observability-and-tracing) · [ML Lifecycle](#ml-lifecycle-and-experiment-tracking) |
+
+```mermaid
+flowchart LR
+    D["Data & Documents"] --> T["Training & Fine-Tuning"]
+    D --> R["RAG & Retrieval"]
+    R --> A["Agents & Memory"]
+    M["MCP"] --> A
+    T --> E["Evaluation & Safety"]
+    A --> E
+    E --> S["Inference & Serving"]
+    S --> G["Gateways & Routing"]
+    G --> O["LLMOps & Observability"]
+```
+
+## Model Context Protocol (MCP)
+
+*Canonical protocol resources and the production-grade SDK/debugging surface. The wider SDK and integration ecosystem lives in a separate index.*
 
 - [Model Context Protocol](https://github.com/modelcontextprotocol/modelcontextprotocol) - Official MCP specification and documentation; the canonical source for protocol behavior and versioning.
 - [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Official TypeScript SDK for building MCP clients and servers.
@@ -39,9 +80,9 @@ See [Curation](CURATION.md) for the evidence standard and [Notable exclusions](E
 - [MCP Inspector](https://github.com/modelcontextprotocol/inspector) - Official browser and CLI debugging tool for inspecting MCP servers, tools, resources and protocol traffic.
 - [MCP Registry](https://github.com/modelcontextprotocol/registry) - Official registry and discovery service for MCP servers.
 
-## Agents and Orchestration
+## AI Agents and Orchestration
 
-*Reusable frameworks for state, tools, workflows and multi-agent coordination—not finished assistant applications.*
+*Reusable frameworks for state, tools, workflows and multi-agent coordination rather than finished assistant applications.*
 
 - [LangGraph](https://github.com/langchain-ai/langgraph) - Stateful orchestration framework for long-running and tool-using agents.
 - [Pydantic AI](https://github.com/pydantic/pydantic-ai) - Typed Python framework for production-oriented agents and tool calling.
@@ -55,7 +96,7 @@ See [Curation](CURATION.md) for the evidence standard and [Notable exclusions](E
 - [Haystack](https://github.com/deepset-ai/haystack) - Open framework for RAG pipelines, agents and production search applications.
 - [Langroid](https://github.com/langroid/langroid) - MIT multi-agent framework with explicit message-passing abstractions.
 
-## Coding Agents
+## AI Coding Agents
 
 *Open coding harnesses that can inspect repositories, edit files and execute development workflows.*
 
@@ -75,14 +116,14 @@ See [Curation](CURATION.md) for the evidence standard and [Notable exclusions](E
 - [Letta Agent SDK](https://github.com/letta-ai/letta-agent-sdk) - SDK for building stateful Letta agents across local and hosted deployments.
 - [Graphiti](https://github.com/getzep/graphiti) - Temporal knowledge-graph framework for agent memory and continuously changing facts.
 
-## Browser and Computer Use
+## Browser and Computer-Use Agents
 
 *Tooling for agents that operate browsers or interactive computer environments.*
 
 - [Browser Use](https://github.com/browser-use/browser-use) - Framework for browser agents that can navigate, interact with and extract data from the web.
 - [Stagehand](https://github.com/browserbase/stagehand) - Browser automation SDK that combines deterministic primitives with AI-powered actions, extraction and agents.
 
-## Structured Outputs and Constrained Generation
+## Structured LLM Outputs and Constrained Generation
 
 *Libraries that make model output reliably conform to schemas, grammars or programmatic constraints.*
 
@@ -90,9 +131,9 @@ See [Curation](CURATION.md) for the evidence standard and [Notable exclusions](E
 - [Outlines](https://github.com/dottxt-ai/outlines) - Constrained-generation library for schema-, type-, regex- and grammar-controlled structured outputs.
 - [Guidance](https://github.com/guidance-ai/guidance) - Programming model for constrained and interleaved LLM generation using regex, grammars and control flow.
 
-## Retrieval, Vector Search and Knowledge
+## RAG, Retrieval and Vector Databases
 
-*Core embedding, vector-search and knowledge infrastructure for RAG and agent memory.*
+*Embedding, vector-search and knowledge infrastructure for RAG, semantic search and agent memory.*
 
 - [Qdrant](https://github.com/qdrant/qdrant) - Production vector database and search engine for dense, sparse, hybrid and multi-vector retrieval.
 - [pgvector](https://github.com/pgvector/pgvector) - Vector similarity search extension for PostgreSQL with exact and approximate nearest-neighbor indexes.
@@ -105,9 +146,9 @@ See [Curation](CURATION.md) for the evidence standard and [Notable exclusions](E
 - [FastEmbed](https://github.com/qdrant/fastembed) - Lightweight CPU-first embedding and reranking library; model licenses vary.
 - [Neo4j](https://github.com/neo4j/neo4j) - Graph database frequently used for knowledge graphs and GraphRAG; Community Edition is GPL.
 
-## Document Ingestion, OCR and Parsing
+## Document AI, OCR and Parsing
 
-*High-signal tools for turning real documents into structured, searchable data; low-level primitives live in a specialist index.*
+*High-signal tools for turning real documents into structured, searchable data. Lower-level primitives live in the specialist index.*
 
 - [Docling](https://github.com/docling-project/docling) - Local document conversion and structured extraction for RAG and data pipelines.
 - [Unstructured](https://github.com/Unstructured-IO/unstructured) - General document preprocessing and partitioning toolkit.
@@ -120,9 +161,9 @@ See [Curation](CURATION.md) for the evidence standard and [Notable exclusions](E
 - [GROBID](https://github.com/grobidOrg/grobid) - Scholarly-document parser for structure, metadata and citations.
 - [Apache Tika](https://github.com/apache/tika) - Broad file-type detection and text/metadata extraction across 1,000+ formats.
 
-## Data and Dataset Engineering
+## AI Data and Dataset Engineering
 
-*AI-specific dataset loading, curation, annotation and local processing rather than a general data-engineering catalog.*
+*AI-specific dataset loading, curation, annotation and processing rather than a general-purpose data-engineering catalog.*
 
 - [Hugging Face Datasets](https://github.com/huggingface/datasets) - Dataset loading, streaming, processing and sharing library used across model training and evaluation workflows.
 - [NeMo Curator](https://github.com/NVIDIA-NeMo/Curator) - Scalable data-curation toolkit for filtering, deduplication and preprocessing of large foundation-model datasets.
@@ -133,19 +174,19 @@ See [Curation](CURATION.md) for the evidence standard and [Notable exclusions](E
 - [Polars](https://github.com/pola-rs/polars) - High-performance DataFrame and query engine for single-node processing.
 - [Apache Arrow](https://github.com/apache/arrow) - Foundational in-memory columnar format and multi-language data toolkit.
 
-## Experiment Tracking and ML Lifecycle
+## ML Lifecycle and Experiment Tracking
 
 *Reproducibility, artifacts, experiments and production workflow orchestration across the model lifecycle.*
 
 - [MLflow](https://github.com/mlflow/mlflow) - MLOps platform with GenAI tracing, evaluation and experiment management.
-- [DVC](https://github.com/treeverse/dvc) - Data and experiment versioning for reproducible ML workflows; linked to the canonical repository after the project move.
+- [DVC](https://github.com/treeverse/dvc) - Data and experiment versioning for reproducible ML workflows.
 - [ZenML](https://github.com/zenml-io/zenml) - Open-source AI orchestration platform for reproducible pipelines, artifacts and production workflows.
 - [Metaflow](https://github.com/Netflix/metaflow) - Python framework for developing and operating end-to-end AI/ML workflows from local iteration to production compute.
 - [Flyte](https://github.com/flyteorg/flyte) - Kubernetes-native orchestration platform for resilient data, model and AI workflows at scale.
 
-## Training, Post-Training and Distributed Compute
+## Model Training, Fine-Tuning and Post-Training
 
-*Foundational frameworks and high-leverage tooling for training, fine-tuning, alignment and scaling compute.*
+*Foundational frameworks and high-leverage tooling for training, fine-tuning, alignment and distributed AI compute.*
 
 - [PyTorch](https://github.com/pytorch/pytorch) - Foundational tensor and deep-learning framework with strong GPU acceleration and a broad production ecosystem.
 - [Transformers](https://github.com/huggingface/transformers) - Core model library and ecosystem for transformer-based models.
@@ -167,7 +208,7 @@ See [Curation](CURATION.md) for the evidence standard and [Notable exclusions](E
 - [LLaMA-Factory](https://github.com/hiyouga/LlamaFactory) - Broad fine-tuning toolkit supporting many model families and training methods.
 - [Ray](https://github.com/ray-project/ray) - Distributed AI compute engine for scaling training, data processing, reinforcement learning and model serving.
 
-## Inference and Serving
+## LLM Inference and Model Serving
 
 *Runtimes and deployment layers for local, GPU, cluster and Kubernetes model serving.*
 
@@ -183,7 +224,7 @@ See [Curation](CURATION.md) for the evidence standard and [Notable exclusions](E
 - [GPUStack](https://github.com/gpustack/gpustack) - Open multi-cluster GPU and model-serving management layer.
 - [SkyPilot](https://github.com/skypilot-org/skypilot) - Cloud and cluster orchestration layer for AI compute workloads.
 
-## Gateways and Model Routing
+## AI Gateways and Model Routing
 
 *Provider-neutral API gateways for routing, fallback, rate control and policy enforcement.*
 
@@ -192,7 +233,7 @@ See [Curation](CURATION.md) for the evidence standard and [Notable exclusions](E
 - [Bifrost](https://github.com/maximhq/bifrost) - Apache-2.0 OpenAI-compatible AI gateway with multi-provider routing, failover, load balancing and caching.
 - [Portkey Gateway](https://github.com/Portkey-AI/gateway) - Open-source AI gateway for multi-provider routing, policy controls and guardrail integration.
 
-## Evaluation and Benchmarks
+## LLM Evaluation and Benchmarks
 
 *Frameworks for repeatable model, RAG and agent evaluation rather than benchmark leaderboards alone.*
 
@@ -206,9 +247,9 @@ See [Curation](CURATION.md) for the evidence standard and [Notable exclusions](E
 - [DeepEval](https://github.com/confident-ai/deepeval) - LLM evaluation framework for tests, metrics and CI workflows.
 - [Giskard](https://github.com/Giskard-AI/giskard-oss) - Open testing and evaluation framework for LLM and agent systems.
 
-## Safety, Red Teaming and Governance
+## AI Safety, Red Teaming and Guardrails
 
-*Testing and runtime controls for adversarial evaluation, policy enforcement and agent governance.*
+*Testing and runtime controls for adversarial evaluation, policy enforcement, safety and agent governance.*
 
 - [promptfoo](https://github.com/promptfoo/promptfoo) - Declarative testing, red teaming and CI for prompts, agents and RAG systems.
 - [garak](https://github.com/NVIDIA/garak) - NVIDIA toolkit for probing and red teaming generative models.
@@ -217,9 +258,9 @@ See [Curation](CURATION.md) for the evidence standard and [Notable exclusions](E
 - [Agent Governance Toolkit](https://github.com/microsoft/agent-governance-toolkit) - Microsoft runtime governance toolkit for agent policies, controls and auditability.
 - [Guardrails](https://github.com/guardrails-ai/guardrails) - Validation and guardrail framework for structured and policy-constrained LLM outputs.
 
-## Observability and Tracing
+## LLMOps, Observability and Tracing
 
-*Tracing, telemetry and production monitoring for model and agent applications; experiment lifecycle is kept separate.*
+*Tracing, telemetry and production monitoring for model and agent applications. Experiment lifecycle is kept separate.*
 
 - [Langfuse](https://github.com/langfuse/langfuse) - LLM tracing, evaluation, datasets and prompt-management platform with an MIT core and separately licensed enterprise directories.
 - [Opik](https://github.com/comet-ml/opik) - Open LLM observability, evaluation and experiment platform.
@@ -229,13 +270,13 @@ See [Curation](CURATION.md) for the evidence standard and [Notable exclusions](E
 
 ## Related indexes
 
+The core list stays deliberately selective. Broader or more specialized projects are tracked separately.
+
 - [MCP Ecosystem](MCP_ECOSYSTEM.md) - Additional official SDKs plus domain-specific MCP servers and integrations.
 - [Document AI](DOCUMENT_AI.md) - Lower-level PDF, OCR, table-extraction and document-evaluation tooling.
 - [AI Data Infrastructure](DATA_INFRASTRUCTURE.md) - Broader analytical engines, lakehouse formats and data foundations that are useful around AI workloads but too generic for the core list.
-- [Watchlist](WATCHLIST.md) - Promising, young, adjacent or currently lower-confidence projects that are being tracked outside the core.
+- [Watchlist](WATCHLIST.md) - Promising, young, adjacent or currently lower-confidence projects being tracked outside the core.
 - [Notable exclusions](EXCLUSIONS.md) - Selected well-known projects intentionally left out, with the reason.
-
-## Contributing
-
-Read [CONTRIBUTING.md](CONTRIBUTING.md) before proposing an addition. A pull request should explain why a project deserves limited core-list space, not merely why the project exists.
-
+<p align="center">
+  <sub>This awesome list repo Built and maintained by <strong>MD Anik Hasan (Sawlper)</strong>.<br />If you want to reach me, <a href="https://mdanikhasan.com">mdanikhasan.com</a> has every way.</sub>
+</p>
