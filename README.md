@@ -265,6 +265,7 @@ flowchart LR
 - [OpenLLMetry](https://github.com/traceloop/openllmetry) - OpenTelemetry instrumentation for LLM and agent applications.
 - [OpenLIT](https://github.com/openlit/openlit) - OpenTelemetry-native observability and evaluation stack for AI applications.
 - [Evidently](https://github.com/evidentlyai/evidently) - Evaluation and monitoring for ML, LLM and data-quality workflows.
+- [OpenClaw Monitor](https://github.com/flik2002/openclaw-monitor) - Real-time monitoring dashboard for OpenClaw AI agents: token usage, session tracking, 7-day trends and multi-model support. Vue 3 + ECharts.
 
 ---
 
