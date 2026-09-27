@@ -281,3 +281,5 @@ flowchart LR
     <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>.
   </sub>
 </p>
+
+- [APIClaw](https://apiclaw.biz) - Flat-rate OpenAI-compatible AI API gateway for Claude, GPT, Kimi, Qwen, DeepSeek, and GLM.
